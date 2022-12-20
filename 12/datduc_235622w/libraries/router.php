@@ -93,7 +93,6 @@ require_once LIBRARIES . "lang/$lang.php";
 $requick = array(
 	/* Sản phẩm */
 	array("tbl" => "product_list", "field" => "idl", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
-	array("tbl" => "product_cat", "field" => "idc", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
 	array("tbl" => "product", "field" => "id", "source" => "product", "com" => "san-pham", "type" => "san-pham", "menu" => true),
 
 	/* Video */
@@ -101,13 +100,20 @@ $requick = array(
 	
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", "menu" => true),
 
+	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", "menu" => true),
+	
+	array("tbl" => "news_list", "field" => "idl", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", "menu" => true),
+
+	/* Thư viện ảnh */
+	array("tbl" => "product", "field" => "id", "source" => "product", "com" => "thu-vien-anh", "type" => "thu-vien-anh", "menu" => true),
+
 	/* Trang tĩnh */
 	array("tbl" => "static", "field" => "id", "source" => "static", "com" => "gioi-thieu", "type" => "gioi-thieu", "menu" => true),
 
 	/* Liên hệ */
 	array("tbl" => "", "field" => "id", "source" => "", "com" => "lien-he", "type" => "", "menu" => true),
 
-
+	
 );
 
 /* Find data */
@@ -149,21 +155,20 @@ switch ($com) {
 		break;
 
 
-	case 'chinh-sach':
-		$source = "news";
-		$template = isset($_GET['id']) ? "news/news_detail" : "";
-		$seo->set('type', 'article');
-		$type = $com;
-		$titleMain = null;
-		break;
-
-	
 	case 'tin-tuc':
 		$source = "news";
 		$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
 		$seo->set('type', isset($_GET['id']) ? "article" : "object");
 		$type = $com;
 		$titleMain = "Tin tức";
+		break;
+
+	case 'dich-vu':
+		$source = "news";
+		$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+		$seo->set('type', isset($_GET['id']) ? "article" : "object");
+		$type = $com;
+		$titleMain = "Dịch vụ";
 		break;
 
 	case 'san-pham':

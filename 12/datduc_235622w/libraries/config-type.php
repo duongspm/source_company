@@ -37,8 +37,11 @@ require_once LIBRARIES . 'type/config-type-photo.php';
 
 /* Seo page */
 $config['seopage']['page'] = array(
-    "san-pham" => "Sản phẩm",
+    "du-an" => "Dự án",
+    "dich-vu" => "Dịch vụ",
+    "thu-vien-anh" => "Hình ảnh",
     "tin-tuc" => "Tin tức",
+    "gioi-thieu" => "Giới thiệu",
     "lien-he" => "Liên hệ"
 );
 $config['seopage']['width'] = 300;

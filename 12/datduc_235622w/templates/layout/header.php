@@ -2,20 +2,19 @@
     <div class="wrapper">
         <div class="header__info">
             <div class="header__info-item">
-                <div class="header__icon">
-                    <img src="assets/images/icn-phone.png" alt="<?=$setting['name'.$lang]?>">
+                <div class="marquee">
+                    <div>
+                        <span>You spin me right round, baby. Like a record, baby.</span>
+                    </div>
                 </div>
-                <span>Hotline:
-                    <a
-                        href="tel:<?=$func->formatPhone($optsetting['phone'])?>"><?=$func->formatPhone($optsetting['phone'])?></a></span>
             </div>
             <div class="header__info-item">
                 <div class="header__icon">
-                    <img src="assets/images/icon-email.png" alt="<?=$setting['name'.$lang]?>">
+                    <img src="assets/images/icn-phone.png" alt="<?=$setting['name'.$lang]?>">
                 </div>
-                <span>Email:
-                    <?=$optsetting['email']?>
-                </span>
+                <span>Hotline hỗ trợ:
+                    <a
+                        href="tel:<?=$func->formatPhone($optsetting['phone'])?>"><?=$func->formatPhone($optsetting['phone'])?></a></span>
             </div>
             <div class="header__info-item">
                 <div class="header__icon">
@@ -25,10 +24,11 @@
                     <?=$optsetting['address']?>
                 </span>
             </div>
+
         </div>
     </div>
 </div>
-<div class="wrapper">
+<!-- <div class="wrapper">
     <div class="header__buttom">
         <div class="header__logo">
             <a href="" title="<?=trangchu?>" class="peShiner">
@@ -50,7 +50,7 @@
             <?php }}?>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <!-- <div class="header__banner">

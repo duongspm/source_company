@@ -213,7 +213,7 @@ if (
                                     class="fas fa-minus"></i></button>
                         </div>
                     </div>
-                    <!-- <div class="card-body">
+                    <div class="card-body">
                         <?php
                             $photoDetail = array();
                             $photoDetail['upload'] = UPLOAD_NEWS_L;
@@ -233,7 +233,7 @@ if (
                             </label>
                             <div class="photoUpload-dimension"><?= $photoDetail['dimension'] ?></div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
                 <?php } ?>
             </div>

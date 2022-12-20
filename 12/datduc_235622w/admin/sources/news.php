@@ -352,23 +352,23 @@ function saveMan()
 				}
 			}
 
-			// if ($func->hasFile("file2")) {
-			// 	$photoUpdate = array();
-			// 	$file_name2 = $func->uploadName($_FILES["file2"]["name"]);
+			if ($func->hasFile("file2")) {
+				$photoUpdate = array();
+				$file_name2 = $func->uploadName($_FILES["file2"]["name"]);
 
-			// 	if ($photo2 = $func->uploadImage("file2", $config['news'][$type]['img_type'], UPLOAD_NEWS, $file_name2)) {
-			// 		$row = $d->rawQueryOne("select id, photo2 from #_news where id = ? and type = ? limit 0,1", array($id, $type));
+				if ($photo2 = $func->uploadImage("file2", $config['news'][$type]['img_type'], UPLOAD_NEWS, $file_name2)) {
+					$row = $d->rawQueryOne("select id, photo2 from #_news where id = ? and type = ? limit 0,1", array($id, $type));
 
-			// 		if (!empty($row)) {
-			// 			$func->deleteFile(UPLOAD_NEWS . $row['photo2']);
-			// 		}
+					if (!empty($row)) {
+						$func->deleteFile(UPLOAD_NEWS . $row['photo2']);
+					}
 
-			// 		$photoUpdate['photo2'] = $photo2;
-			// 		$d->where('id', $id);
-			// 		$d->update('news', $photoUpdate);
-			// 		unset($photoUpdate);
-			// 	}
-			// }
+					$photoUpdate['photo2'] = $photo2;
+					$d->where('id', $id);
+					$d->update('news', $photoUpdate);
+					unset($photoUpdate);
+				}
+			}
 
 			/* SEO */
 			if (isset($config['news'][$type]['seo']) && $config['news'][$type]['seo'] == true) {
@@ -464,18 +464,18 @@ function saveMan()
 				}
 			}
 
-			// /* Photo */
-			// if ($func->hasFile("file2")) {
-			// 	$photoUpdate = array();
-			// 	$file_name2 = $func->uploadName($_FILES['file2']["name"]);
+			/* Photo */
+			if ($func->hasFile("file2")) {
+				$photoUpdate = array();
+				$file_name2 = $func->uploadName($_FILES['file2']["name"]);
 
-			// 	if ($photo2 = $func->uploadImage("file2", $config['news'][$type]['img_type'], UPLOAD_NEWS, $file_name2)) {
-			// 		$photoUpdate['photo2'] = $photo2;
-			// 		$d->where('id', $id_insert);
-			// 		$d->update('news', $photoUpdate);
-			// 		unset($photoUpdate);
-			// 	}
-			// }
+				if ($photo2 = $func->uploadImage("file2", $config['news'][$type]['img_type'], UPLOAD_NEWS, $file_name2)) {
+					$photoUpdate['photo2'] = $photo2;
+					$d->where('id', $id_insert);
+					$d->update('news', $photoUpdate);
+					unset($photoUpdate);
+				}
+			}
 
 
 			
