@@ -15,6 +15,7 @@ $productlist = $cache->get("select name$lang, slugvi, slugen, id from #_product_
 $productcat = $cache->get("select name$lang, slugvi, slugen, id from #_product_cat where type = ? and find_in_set('noibat',status) and find_in_set('hienthi',status) order by numb,id desc", array('san-pham'), 'result', 7200);
 $sloganheader = $cache->get("select name$lang from #_static where type = ? limit 0,1", array('slogan-header'), 'fetch', 7200);
 $dichvulist = $cache->get("select name$lang, slugvi, slugen, id from #_news_list where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('dich-vu'), 'result', 7200);
+$dichvu = $cache->get("select * from #_news where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('dich-vu'), 'result', 7200);
 
 // need
 

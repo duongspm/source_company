@@ -165,7 +165,7 @@ switch ($com) {
 
 	case 'dich-vu':
 		$source = "news";
-		$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+		$template = isset($_GET['id']) ? "news/news_detail" : "news/dichvu";
 		$seo->set('type', isset($_GET['id']) ? "article" : "object");
 		$type = $com;
 		$titleMain = "Dịch vụ";

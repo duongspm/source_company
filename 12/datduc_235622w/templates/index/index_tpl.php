@@ -101,38 +101,40 @@
             </div>
             <div class="linhvuc__list">
                 <div class="owl-page owl-carousel owl-theme" data-xsm-items="1:20" data-sm-items="2:20"
-                    data-md-items="3:20" data-lg-items="4:20" data-xlg-items="4:20" data-rewind="1" data-autoplay="0"
-                    data-loop="0" data-lazyload="0" data-mousedrag="1" data-touchdrag="1" data-smartspeed="500"
+                    data-md-items="3:20" data-lg-items="4:20" data-xlg-items="4:20" data-rewind="1" data-autoplay="1"
+                    data-loop="1" data-lazyload="0" data-mousedrag="1" data-touchdrag="1" data-smartspeed="500"
                     data-autoplayspeed="3500" data-dots="0" data-nav="1"
                     data-navtext="<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-left' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='5' y1='12' x2='9' y2='16' /><line x1='5' y1='12' x2='9' y2='8' /></svg>|<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-right' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='15' y1='16' x2='19' y2='12' /><line x1='15' y1='8' x2='19' y2='12' /></svg>"
                     data-navcontainer=".control-partner">
                     <?php if(!empty($dichvunb)) {
                     foreach($dichvunb as $v){?>
 
-                    <div class="linhvuc-item ">
+                    <div class="linhvuc-item">
                         <div class="linhvuc__img">
                             <?= $func->getImage(['class' => '', 'sizes' => '69x69x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo2'], 'alt' => $v['name'.$lang]]) ?>
                         </div>
-                        <div class="linhvuc__content ">
-                            <span class="linhvuc__name">
-                                <?=$v['name'.$lang]?>
-                            </span>
-                            <span class="linhvuc__desc ">
-                                <?=$v['desc'.$lang]?>
-                            </span>
-                        </div>
-                        <div class="linhvuc__xemthem">
-                            <a href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">
-                                <div class="linhvuc-btn-left">
-                                    <span>Xem Thêm</span>
-                                </div>
-                                <div class="linhvuc-btn-right">
-                                    <div class="linhvuc__xemthem-icon">
-                                        <img src="assets/images/linhvuc-icon.png" alt="<?=$v['name'.$lang]?>">
+                        <div class="linhvuc__buttom">
+                            <div class="linhvuc__content ">
+                                <a href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>" class="linhvuc__name">
+                                    <?=$v['name'.$lang]?>
+                                </a>
+                                <span class="linhvuc__desc ">
+                                    <?=$v['desc'.$lang]?>
+                                </span>
+                            </div>
+                            <div class="linhvuc__xemthem">
+                                <a href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">
+                                    <div class="linhvuc-btn-left">
+                                        <span>Xem Thêm</span>
                                     </div>
-                                </div>
-
-                            </a>
+                                    <div class="linhvuc-btn-right">
+                                        <div class="linhvuc__xemthem-icon">
+                                            <img src="assets/images/linhvuc-icon.png" alt="<?=$v['name'.$lang]?>">
+                                        </div>
+                                    </div>
+    
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -144,7 +146,7 @@
 </div>
 
 <?php if(!empty($banner)){?>
-<div class="banner effect10 mr-top">
+<div class="banner effect10">
     <?= $func->getImage(['class' => 'lazy', 'sizes' => '1366x400x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $banner['photo'], 'alt' => "about"]) ?>
 </div>
 <?php }?>

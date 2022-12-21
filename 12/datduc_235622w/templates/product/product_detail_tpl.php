@@ -47,25 +47,16 @@
             </div>
             <ul class="attr-pro-detail">
 
-
-                <li class="w-clear">
-                    <label class="attr-label-pro-detail"><?=gia?>:</label>
-                    <div class="attr-content-pro-detail">
-                        <?php if($rowDetail['sale_price']) { ?>
-                        <span class="price-new-pro-detail"><?=$func->formatMoney($rowDetail['sale_price'])?></span>
-                        <span class="price-old-pro-detail"><?=$func->formatMoney($rowDetail['regular_price'])?></span>
-                        <?php } else { ?>
-                        <span
-                            class="price-new-pro-detail"><?=($rowDetail['regular_price']) ? $func->formatMoney($rowDetail['regular_price']) : lienhe?></span>
-                        <?php } ?>
-                    </div>
-                </li>
-
                 <li class="w-clear">
                     <label class="attr-label-pro-detail"><?=luotxem?>:</label>
                     <div class="attr-content-pro-detail"><?=$rowDetail['view']?></div>
                 </li>
             </ul>
+            <div class="xemthem-btn lienhe-btn">
+                <a href="tel:<?=$func->formatPhone($optsetting['phone'])?>"
+                    title="<?=$func->formatPhone($optsetting['phone'])?>">Liên hệ ngay</a>
+            </div>
+            <br>
             <div class="desc-pro-detail">
                 <?=(!empty($rowDetail['desc'.$lang])) ? nl2br(htmlspecialchars_decode($rowDetail['desc'.$lang])) : ''?>
             </div>
@@ -115,9 +106,8 @@
             </p>
             <h3 class="name-product text-split"><?=$v['name'.$lang]?></h3>
             <p class="price-product">
-                Giá:
                 <span
-                    class="price-new"><?=($v['regular_price']) ? $func->formatMoney($v['regular_price']) : lienhe?></span>
+                    class="price-new"><?=lienhe?></span>
             </p>
         </a>
     </div>
