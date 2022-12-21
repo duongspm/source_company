@@ -2,7 +2,7 @@
 if (!defined('SOURCES')) die("Error");
 
 /* Query allpage */
-// DUONGG
+// need
 $footer = $cache->get("select name$lang, content$lang from #_static where type = ? limit 0,1", array('footer'), 'fetch', 7200);
 $banner = $cache->get("select photo from #_photo where type = ? and act = ? limit 0,1", array('banner', 'photo_static'), 'fetch', 7200);
 $favicon = $cache->get("select photo from #_photo where type = ? and act = ? and find_in_set('hienthi',status) limit 0,1", array('favicon', 'photo_static'), 'fetch', 7200);
@@ -13,8 +13,10 @@ $social = $cache->get("select name$lang, photo, link from #_photo where type = ?
 $product = $cache->get("select id from #_product where type = ? and find_in_set('noibat',status) and find_in_set('hienthi',status)", array('san-pham'), 'result', 7200);
 $productlist = $cache->get("select name$lang, slugvi, slugen, id from #_product_list where type = ? and find_in_set('noibat',status) and find_in_set('hienthi',status) order by numb,id desc", array('san-pham'), 'result', 7200);
 $productcat = $cache->get("select name$lang, slugvi, slugen, id from #_product_cat where type = ? and find_in_set('noibat',status) and find_in_set('hienthi',status) order by numb,id desc", array('san-pham'), 'result', 7200);
+$sloganheader = $cache->get("select name$lang from #_static where type = ? limit 0,1", array('slogan-header'), 'fetch', 7200);
+$dichvulist = $cache->get("select name$lang, slugvi, slugen, id from #_news_list where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('dich-vu'), 'result', 7200);
 
-// DUONGG
+// need
 
 /* Get statistic */
 $counter = $statistic->getCounter();

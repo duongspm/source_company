@@ -3,57 +3,62 @@
         <div class="footerr">
             <div class="footer-item">
                 <div class="footer-title">
-                    <div class="footer_line"></div>
                     <span>Thông tin liên hệ</span>
                 </div>
                 <div class="footer-name">
                     <span><?=$setting['name'.$lang]?></span>
                 </div>
-                <div class="footer-address">
-                    <div class="item-address">
-                        <img src="assets/images/i-f.png">
-                        <span><?=$optsetting['address']?></span>
-                    </div>
-                    <div class="item-address">
-                        <img src="assets/images/i-f-02.png">
-                        <a href="tel:<?=$optsetting['phone']; ?>"><?=$func->formatPhone($optsetting['phone'])?>
-                        </a>
-                    </div>
-                    <div class="item-address">
-                        <img src="assets/images/i-f-03.png">
-                        <span><?=$optsetting['email']?></span>
-                    </div>
-                    <div class="item-address">
-                        <img src="assets/images/i-f-04.png">
-                        <span><?=$optsetting['website']?></span>
-                    </div>
+                <div class="footer-info"><?= htmlspecialchars_decode($footer['content' . $lang]) ?></div>
+                <div class="footer-social">
+                    <span>Mạng xã hội:</span>
+                    <?php if(!empty($social)){foreach($social as $v){?>
+                    <a class="social-item" href="<?=$v['link']?>">
+                        <?=$func->getImage(['class' => '', 'sizes' => '40x40x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $setting['name'.$lang]])?>
+                    </a>
+                    <?php }}?>
+
                 </div>
 
             </div>
             <div class="footer-item">
                 <div class="footer-title">
+                    <span>truy cập nhanh</span>
                     <div class="footer_line"></div>
-                    <span>Chính sách khách hàng</span>
                 </div>
-                <div class="chinhsach">
+                <div class="footer__list">
                     <ul>
-                        <?php foreach($policy as $v){?>
-                        <li><a href="<?=$v[$sluglang]?>"><?=$v['name'.$lang]?></a></li>
-                        <?php }?>
+                        <li><a href="" title="Giới thiệu">Trang chủ</a></li>
+                        <li><a href="gioi-thieu" title="Giới thiệu">Giới thiệu</a></li>
+
+                        <li><a href="dich-vu" title="Dịch vụ">Dịch vụ</a></li>
+
+                        <li><a href="san-pham" title="Dự án">Dự án</a></li>
+
+                        <li><a href="thu-vien-anh" title="Hình ảnh">Hình ảnh</a></li>
+
+                        <li><a href="video" title="Video">Video</a></li>
+
+                        <li><a href="tin-tuc" title="Tin tức">Tin tức</a></li>
+                        <li><a href="lien-he" title="Liên hệ">Liên hệ</a></li>
+
                     </ul>
                 </div>
             </div>
             <div class="footer-item">
                 <div class="footer-title">
+                    <span>Fanpage facebook</span>
                     <div class="footer_line"></div>
-                    <span>Sản phẩm</span>
                 </div>
-                <div class="chinhsach sanphamlistft">
-                    <ul>
-                        <?php foreach($productlist as $v){?>
-                        <li><a href="<?=$v[$sluglang]?>"><?=$v['name'.$lang]?></a></li>
-                        <?php }?>
-                    </ul>
+                <div class="footer-fb">
+                    <div class="fb-page" data-href="<?=$optsetting['fanpage']?>" data-tabs="timeline" data-width="500"
+                        data-height="250" data-small-header="true" data-adapt-container-width="true"
+                        data-hide-cover="false" data-show-facepile="true">
+                        <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="<?=$optsetting['fanpage']?>">
+                                <a href="<?=$optsetting['fanpage']?>">Facebook</a>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,12 +68,22 @@
             <div class="copyright-left">
                 <span>Copyright © <span class="settingname">
                         <?=$setting['name'.$lang]?>
-                    </span>. All rights reserved. Design by Nina Co.,Ltd</span>
+                    </span>. Powered by Nina Co.,Ltd</span>
+            </div>
+            <div class="copyright-right">
+                <span><?= dangonline ?>: <?= $online ?></span>
+                <span>|</span>
+                <span><?= homnay ?>: <?= $counter['today'] ?></span>
+                <span>|</span>
+                <span><?= trongthang ?>: <?= $counter['month'] ?></span>
+                <span>|</span>
+                <span><?= tongtruycap ?>: <?= $counter['total'] ?></span>
             </div>
         </div>
     </div>
 </div>
 
+<?= $addons->set('footer-map', 'footer-map', 6); ?>
 <?= $addons->set('messages-facebook', 'messages-facebook', 2); ?>
 
 <a class="btn-zalo btn-frame text-decoration-none" target="_blank"

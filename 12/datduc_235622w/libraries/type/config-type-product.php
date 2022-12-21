@@ -12,6 +12,8 @@
     $config['product'][$nametype]['images'] = true;
     $config['product'][$nametype]['show_images'] = true;
     $config['product'][$nametype]['desc'] = true;
+    $config['product'][$nametype]['desc_cke'] = true;
+
     $config['product'][$nametype]['schema'] = true;
     $config['product'][$nametype]['content'] = true;
     $config['product'][$nametype]['content_cke'] = true;

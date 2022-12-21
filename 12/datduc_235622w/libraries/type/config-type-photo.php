@@ -36,7 +36,7 @@
     $config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
     $config['photo']['photo_static'][$nametype]['images'] = true;
     $config['photo']['photo_static'][$nametype]['watermark'] = true;
-    $config['photo']['photo_static'][$nametype]['watermark-advanced'] = true;
+    $config['photo']['photo_static'][$nametype]['watermark-advanced'] = false;
     $config['photo']['photo_static'][$nametype]['width'] = 50;
     $config['photo']['photo_static'][$nametype]['height'] = 48;
     $config['photo']['photo_static'][$nametype]['thumb'] = '50x48x1';
@@ -72,12 +72,14 @@
 
 
     /* Video */
-    $nametype = "video";
+    $nametype = "videoclipd";
     $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Video";
     $config['photo']['man_photo'][$nametype]['check_photo'] = array("hienthi" => "Hiển thị");
-    $config['photo']['man_photo'][$nametype]['number_photo'] = 2;
+    $config['photo']['man_photo'][$nametype]['number_photo'] = 4;
     $config['photo']['man_photo'][$nametype]['video_photo'] = true;
     $config['photo']['man_photo'][$nametype]['name_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['desc_photo'] = true;
+
     $config['photo']['man_photo'][$nametype]['images_photo'] = true;
     $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
     $config['photo']['man_photo'][$nametype]['width_photo'] = 635;

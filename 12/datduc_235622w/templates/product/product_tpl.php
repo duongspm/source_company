@@ -1,26 +1,7 @@
-<div class="title-main"><span><?=(!empty($titleCate)) ? $titleCate : @$titleMain?></span></div>
+<div class="title-main"><span>Dự án</span></div>
 <div class="content-main w-clear">
     <div class="row">
-        <div class="col-md-3 danhsach-cap1 danhsach-cap1-in">
-            <div class="danhsach__heading">
-                <span>hãng xe</span>
-            </div>
-            <div class="danhsach-cap1-list">
-                <?php if(!empty($productlist)){?>
-                <ul>
-                    <?php foreach($productlist as $v){?>
-                    <li>
-                        <a href="<?=$v[$sluglang]?>">
-                            <?=$v['name'.$lang]?>
-                        </a>
-                    </li>
-                    <?php }?>
-                </ul>
-                <?php }?>
-            </div>
-
-        </div>
-        <div class="productlistss col-md-9">
+        <div class="productlistss">
             <?php if(!empty($product)) { foreach($product as $k => $v) { ?>
             <div class="product">
                 <a class="box-product text-decoration-none" href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">

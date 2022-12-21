@@ -9,7 +9,7 @@
     $config['static'][$nametype]['content'] = true;
     $config['static'][$nametype]['content_cke'] = true;
     $config['static'][$nametype]['seo'] = true;
-    $config['static'][$nametype]['width'] = 480;
+    $config['static'][$nametype]['width'] = 580;
     $config['static'][$nametype]['height'] = 450;
     $config['static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
     

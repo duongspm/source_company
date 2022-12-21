@@ -505,16 +505,29 @@ NN_FRAMEWORK.DomChange = function(){
         });
     });
 };
-NN_FRAMEWORK.slidehinh = () => {
-    $('.one-time').slick({
-        dots: false,
-        infinite: true,
-        autoplay: false,
+NN_FRAMEWORK.SlickBlog = () => {
+    $('.slickblog').slick({
+        autoplay: true,
         autoplaySpeed: 3000,
         speed: 1000,
         slidesToShow: 3,
         slidesToScroll: 1,
-        adaptiveHeight: true
+        vertical: true,
+    });
+};
+
+NN_FRAMEWORK.FlipsterVideo = () => {
+    $(".flipstervideo").flipster({
+        loop: true,
+        click: true,
+        keyboard: true,
+        touch: true,
+
+        autoplay: 5000,
+        spacing: -0.45,
+        buttons: true,
+        buttonPrev: '<img src="../assets/images/icon-prev.png" />',
+        buttonNext: '<img src="../assets/images/video-next.png" />',
     });
 };
 
@@ -771,7 +784,8 @@ $(document).ready(function(){
     NN_FRAMEWORK.DomChange();
     NN_FRAMEWORK.TickerScroll();
     NN_FRAMEWORK.DatePicker();
-    NN_FRAMEWORK.slidehinh();
+    NN_FRAMEWORK.SlickBlog();
+    NN_FRAMEWORK.FlipsterVideo();
     NN_FRAMEWORK.flip();
     NN_FRAMEWORK.loadNameInputFile();
     NN_FRAMEWORK.loadPagingList();
